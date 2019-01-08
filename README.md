@@ -42,7 +42,5 @@ The training on Tensorflow is very fast and reach great accuracy. On the followi
 ![Epoch 39150](epoch_39150.png)
 
 ## Libraries used
-Tensorflow
-Numpy
-Sklearn
+Tensorflow / Numpy / Sklearn
 
