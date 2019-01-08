@@ -52,7 +52,7 @@ The input are vector 12 x 12.
 The training on Tensorflow is very fast and reach great accuracy. On the following pictures, we saw the improvement of the prediction on the training set:
 
 ![Epoch 1](epoch_1.2.png)
-![Epoch 3800](epoch_3800.png)
+![Epoch 39150](epoch_39150.png)
 
 
 Results
