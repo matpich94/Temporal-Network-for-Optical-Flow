@@ -27,7 +27,7 @@ However, edges must not be used because of the aperture problem. Only the corner
 
 ## Neural Network
 
-The input data used to train the neural network are only the time surfaces corresponding to the corners of the object. It is a 1 x 1 vector.
+The input data used to train the neural network are only the time surfaces corresponding to the corners of the object. It is a 12 x 12 vector.
 
 The network is simply composed of:
 
