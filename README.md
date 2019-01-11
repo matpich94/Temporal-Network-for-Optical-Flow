@@ -9,7 +9,7 @@ In this code, a new kind of optical flow algorithm has been developed. This algo
     1. This algorithm is a machine learning algorithm using fully connected neural network,
     2. The input data are not frames but events. 
 
-The algorithm uses inputs from event based cameras. The pixels of an event based camera spikes only when they receive a difference light intensity.
+The algorithm uses inputs from event based cameras. The pixels of an event based camera spikes only when they detect a change in brightness.
 
 For every event from the event based camera, its time stamp and the coordinate of the pixel (x, y) are stored.
 
