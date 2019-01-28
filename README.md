@@ -47,13 +47,10 @@ Tensorflow / Numpy / Sklearn
 ## How to run the code ?
 
 1. First the data must processed in order to only keep the cornes and remove the edges. The script which acheives this role is __process_data.py__. This script will generate two files *input_data.npy* and *output_data.npy* which contains the processed data. 
-
-python process_data.py -input='input/Bar_24x2_directions.txt' -output_speed='input/Bar_24x2_directions_xy.txt' -width=240 -height=304
+*python process_data.py -input='input/Bar_24x2_directions.txt' -output_speed='input/Bar_24x2_directions_xy.txt' -width=240 -height=304*
 
 2. Then, the network must be trained. The script which acheives this role is __neural_network.py__. This script will generate the folder *tmp* which containes the neural network model parameters (weights, biases).
-
-python neural_network.py
+*python neural_network.py*
 
 3. To visualize the results, the script __visualizer_arrow.py__ must be run. 
-
-python visualizer_arrow.py -input='input/Bar_24x2_directions.txt' -model='tmp/model.ckpt'
+*python visualizer_arrow.py -input='input/Bar_24x2_directions.txt' -model='tmp/model.ckpt'*
