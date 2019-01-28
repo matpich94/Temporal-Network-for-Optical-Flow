@@ -1,7 +1,7 @@
 import argparse
 
 # -------------- ARGPARSE PARAMETERS -------------------------------------------
-parser = argparse.ArgumentParser(description="Runs edge detection on an event feed using Hough transform")
+parser = argparse.ArgumentParser(description="Run process data for optical flow")
 
 parser.add_argument('-input',
                     action='store',
