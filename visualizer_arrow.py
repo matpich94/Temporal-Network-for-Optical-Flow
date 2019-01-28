@@ -10,12 +10,12 @@ import tensorflow as tf
 import numpy as np
 import pylab
 
-ev_file = os.path.abspath(".") + "/input/Bar_24x2_directions.txt"
+from parameters_visualizer import *
 
-###################
-### PARAMETERS ####
-###################
+#----Parameters----#
+args = parser.parse_args()
 
+ev_file = args.input
 
 pylab.ion()
 t_norm = 10
@@ -32,9 +32,7 @@ loc = 0
 n_hidden = 60
 activation_output = False
 
-#########################
-### Useful Functions ####
-#########################
+#----Useful Functions ----#
 
 def decrease (t_old, t_current):
     if t_old == 0:
@@ -66,9 +64,7 @@ def is_corner_threshold(patch_update):
     else:
         return False
 
-######################
-### IMPORT WEIGHTS ###
-######################
+#---- Import Weights previously trained ----#
 
 tf.reset_default_graph()
 
@@ -95,15 +91,13 @@ with tf.variable_scope("output", reuse = tf.AUTO_REUSE):
 
 saver = tf.train.Saver()
 
-####################
-### SHOW FIGURE ###
-###################
+#----Show Figure ---#
 
+model = args.model
 
 f = plt.figure()
 with tf.Session() as sess:
-	tensor_path = os.path.abspath(".") + "/tmp/model.ckpt"
-	saver.restore(sess, tensor_path)
+	saver.restore(sess, model)
 
 	with open(ev_file, "r") as events:
 
@@ -120,7 +114,7 @@ with tf.Session() as sess:
 				patch_update = vec_decrease(patch, ts)
 				if is_corner_threshold (patch_update):	
 					speed = sess.run(output, feed_dict = {x_input:patch_update.reshape(1,144)})
-					[vx, vy] = 15*(speed[0,] - 2)
+					[vx, vy] = 15*(speed[0,] - 2) # -2 because of the translation for the ReLU function
 					plt.arrow(y, x, vy, vx, color='b', width= 1, head_width = 2)
 
 			if ts > step*loc:
